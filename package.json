@@ -10,7 +10,7 @@
   "author": "João Marcos",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.3.1",
+    "cypress": "^10.6.0",
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
   "cypress-cucumber-preprocessor": {

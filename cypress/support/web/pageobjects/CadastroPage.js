@@ -6,15 +6,17 @@ const cadastroElements = new CadastroElements
 class CadastroPage {
     
     acessarTelaDeCadastro() {
-        cadastroElements.acessarTelaDeCadastro();
+        cy.get(cadastroElements).click()
     }
 
     inserirDadosValidos() {
-        cadastroElements.inserirDadosValidos();
+        cy.get(cadastroElements)
+            .type('nome').should('have.value', 'testwebmobileapi@gmail.com')
     }
 
     InserirDadosInvalidos(){
-        cadastroElements.inserirDadosInvalidos();
+        cy.get(cadastroElements)
+            .type('nome').should('have.value', 'testwebmobileapi@gmail.com')
     }
 }
 

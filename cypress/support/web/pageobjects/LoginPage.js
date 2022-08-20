@@ -5,15 +5,21 @@ const loginElements = new LoginElements
 const url = Cypress.config("baseUrl")
 
 class LoginPage {
-    // Acessa o site que será testado
     acessarSite() {
         cy.visit(url)
     }
 
-    // Clica no botão que acessa a página de login do site e faz login
     efetuarLogin() {
-        (loginElements.efetuarLogin())
+        cy.get(loginElements.openLoginModal).click()
+        cy.get(loginElements.emailOrCpfTextfield)
+            .type('testwebmobileapi@gmail.com').should('have.value', 'testwebmobileapi@gmail.com')
+        cy.get(loginElements.passwordTextfield)
+            .type('test#666')
+        cy.get(loginElements.loginButton).click()
+    }
+
+    validoLogin() {
+        cy.contains('Usuario')
     }
 }
-
 export default LoginPage;
